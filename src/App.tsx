@@ -16,6 +16,7 @@ import fetchedData from "./tempdata";
 import ImagesModal from "./components/ImagesModal";
 import Spinner from "./components/Spinner";
 import Pagination from "./components/Pagination";
+import { getCachedImage, setCachedImage } from "./utilities/cached";
 
 type ImageItem = {
   id: number;
@@ -52,7 +53,6 @@ function App() {
         const designedData = result.map((el) => {
           return { ...el, title: "some demo title", description: "some desc" };
         });
-        //console.log(designedData);
         setData(designedData);
       } catch (err) {
         console.error(
@@ -72,23 +72,40 @@ function App() {
       setPreloading(true);
 
       const preloadImages = async () => {
-        const newData = data.map((el: ImageItem) => {
-          return new Promise<ImageItem>((resolve) => {
-            var image = new Image();
-            image.fetchPriority = "high";
-            image.crossOrigin = "anonymous";
-            image.src = el.download_url;
+        try {
+          const newData = await Promise.all(
+            data.map(async (el: ImageItem) => {
+              // 1. Check cache first
+              const cached = getCachedImage(el.download_url);
+              if (cached?.loaded) {
+                return { ...el, loaded: true }; // ← This returns a NON-Promise value
+                // The async function automatically wraps this in a resolved Promise
+                // Equivalent to: return Promise.resolve({ ...el, loaded: true })
+              }
 
-            image.decode();
+              // 2. No cache - load fresh
+              const img = new Image();
+              img.fetchPriority = "high";
+              img.crossOrigin = "anonymous";
+              img.src = el.download_url;
 
-            image.onload = () => resolve({ ...el, loaded: true });
-            image.onerror = () => resolve({ ...el, loaded: false });
-          });
-        });
-
-        const newPromise = await Promise.all(newData);
-        setLoadedData(newPromise.filter((item) => item.loaded === true));
-        setPreloading(false);
+              // 3. Fallback to traditional onload
+              return new Promise<ImageItem>((resolve) => {
+                console.log("in promise");
+                img.onload = () => {
+                  setCachedImage(el.download_url);
+                  resolve({ ...el, loaded: true });
+                };
+                img.onerror = () => resolve({ ...el, loaded: false });
+              });
+            })
+          );
+          setLoadedData(newData.filter((item) => item.loaded));
+        } catch (error) {
+          console.error("Preloading error:", error);
+        } finally {
+          setPreloading(false);
+        }
       };
 
       preloadImages();

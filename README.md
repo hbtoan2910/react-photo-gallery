@@ -59,3 +59,13 @@ Looking for a professional photo gallery with these features?
 ![alt text](image-1.png)
 
 ![alt text](image-2.png)
+
+## Pending issues:
+
+- The preloading feature performs best on Firefox, but doesn't work as effectively on other browsers like Chrome or Opera, even after implementing caching to enhance rendering speed.
+
+**1. Firefox performance**: Display a progressive render faster
+![firefox](onfirefox.gif)
+
+**2. Chrome performance**: More aggressive about image quality, sometimes at the cost of initial render speed
+![chrome](onchrome.gif)
