@@ -38,9 +38,29 @@ Looking for a professional photo gallery with these features?
 
 ## Key features:
 
-1. Basic pagination features
+1. Basic pagination features (including reduce number of page btn displayed (add ellipsis) when swapping to mobile view)
 
-2. Use library **_yet-another-react-lightbox_** : create a **lightbox** to increase UX: supports keyboard, mouse, touchpad and touchscreen navigation
+![alt text](image.png)
+
+2. Make this webpage responsive for Iphone 16 Promax (both Portrait and Landscape)
+
+   Desktop view:
+
+   ![alt text](image-3.png)
+
+   Mobile view:
+
+   ![alt text](image-4.png)
+
+   ![alt text](image-5.png)
+
+   ![alt text](image-7.png)
+
+   ![alt text](image-6.png)
+
+   ![alt text](image-8.png)
+
+3. Use library **_yet-another-react-lightbox_** : create a **lightbox** to increase UX: supports keyboard, mouse, touchpad and touchscreen navigation
 
 - Preloading: never displays partially downloaded images
 - Performance: preloads limited number of images without compromising performance or UX
