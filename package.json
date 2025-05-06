@@ -1,5 +1,13 @@
 {
-  "name": "ryan-gallery",
+  "name": "react-photo-gallery-by-hbtoan2910",
+  "description": "A performant React photo gallery component with TypeScript support",
+  "keywords": [
+    "react",
+    "lightbox",
+    "video.js",
+    "typescript",
+    "hbtoan2910"
+  ],
   "private": true,
   "version": "0.0.0",
   "type": "module",
