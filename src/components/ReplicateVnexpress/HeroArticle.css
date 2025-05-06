@@ -1,0 +1,11 @@
+.hero-article {
+  padding: 10px;
+  text-align: center;
+}
+
+.hero-article .hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}

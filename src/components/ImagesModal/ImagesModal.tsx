@@ -1,6 +1,15 @@
 import "./ImagesModal.css";
 
-const ImagesModal = (props) => {
+interface Image {
+  id: string;
+  download_url: string;
+}
+interface ImagesModalProps {
+  images: Image[];
+  onImageClick: (index: number) => void;
+}
+
+const ImagesModal: React.FC<ImagesModalProps> = (props) => {
   return (
     <>
       <div className="images-container">

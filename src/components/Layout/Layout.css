@@ -1,0 +1,22 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+
+  min-height: calc(100vh - 70px);
+}
+
+/* ============================================= */
+/* Mobile Styles - Applied via Media Query       */
+/* ============================================= */
+
+/* iPhone 16 Pro Max and similar large phones */
+@media (max-width: 767px) and (min-width: 430px) {
+}

@@ -1,0 +1,372 @@
+/* ============================================= */
+/* Website-First (Desktop) Styles - Default      */
+/* ============================================= */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  height: 70px;
+  width: 100%;
+  background-color: #dba531;
+  color: #fff;
+}
+nav .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  height: 100%;
+}
+nav .nav-container .logo {
+  display: flex;
+  flex: 0 0 170px;
+  align-items: center;
+  justify-content: end;
+  height: 100%;
+  gap: 5px;
+}
+nav .nav-container .logo a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+nav .nav-container .logo a img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+nav .nav-container .logo .country {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #faf3f3;
+  transform: translateY(-20px) translateX(-22px); /* Adjust this value to move it up */
+}
+
+nav .nav-container .topMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 60%;
+  height: 100%;
+}
+nav .nav-container .topMenu a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  outline: none;
+  height: 100%;
+}
+nav .nav-container .topMenu a .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Base styles for languages container */
+nav .nav-container .languages {
+  position: relative;
+}
+
+/* Current language specific styles */
+nav .nav-container .languages .current {
+  background-color: #008cba;
+  color: #fff;
+}
+nav .nav-container .languages .current:hover {
+  background-color: #1eb4e6;
+  cursor: pointer;
+}
+
+/* Dropdown menu styles */
+nav .nav-container .languages .choose {
+  padding: 6px 7px 1px 7px;
+  position: absolute;
+  top: 48px;
+  left: -5px;
+  background-color: #fff;
+  border: #ccc 1px solid;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 1);
+}
+
+/* Shared styles for .language and dropdown links */
+nav .nav-container .languages .language,
+nav .nav-container .languages .choose a {
+  box-sizing: border-box;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+}
+
+/* Dropdown links */
+nav .nav-container .languages .choose a {
+  padding: 0;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: #000;
+  background-color: #ddd;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+nav .nav-container .languages .choose a:hover {
+  color: #fe711d;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+nav .nav-container .login {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+nav .nav-container .login a {
+  text-decoration: none;
+  color: white;
+}
+nav .nav-container .login a:hover {
+  color: black;
+  transform: scale(1.05); /* Slight enlargement */
+  display: inline-block; /* Required for transform */
+}
+
+/* Hide mobile menu button on desktop */
+.mobile-menu-btn {
+  display: none;
+}
+.mobile-menu-btn #bar {
+  font-size: xx-large;
+}
+
+/* ============================================= */
+/* Mobile Styles - Applied via Media Query       */
+/* ============================================= */
+
+/* iPhone 16 Pro Max and similar large phones: Portrait view */
+@media (max-width: 767px) and (min-width: 430px) {
+  nav {
+    height: 60px;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  nav .nav-container {
+    justify-content: space-between;
+  }
+
+  nav .nav-container .logo {
+    flex: 0 0 auto;
+    justify-content: start;
+  }
+
+  nav .nav-container .logo a img {
+    height: 90%;
+  }
+
+  nav .nav-container .logo .country {
+    font-size: 10px;
+    transform: translateY(-10px) translateX(-10px);
+  }
+
+  /* Show mobile menu button */
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    position: relative;
+  }
+
+  /* Hide desktop menu, languages and login on mobile */
+  nav .nav-container .topMenu,
+  nav .nav-container .languages,
+  nav .nav-container .login {
+    display: none;
+  }
+  nav .nav-container .mobile-menu {
+    padding: 5px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #000;
+    background-color: #ddd;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* padding: 6px 7px 1px 7px; */
+    position: absolute;
+    top: 40px;
+    left: -110px;
+    background-color: #fff;
+    border: #ccc 1px solid;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 1);
+  }
+
+  nav .nav-container .mobile-menu .mobile-menu-items > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    outline: none;
+    height: 100%;
+  }
+
+  nav .nav-container .mobile-menu .mobile-menu-items .menu-mobile-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  nav .nav-container .mobile-menu .mobile-menu-items .menu-mobile-item i {
+    width: 20px;
+  }
+
+  nav .nav-container .mobile-menu a:hover {
+    color: #fe711d;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+
+  .language-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 10px;
+    background-color: #fff;
+    border: #ccc 1px solid;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 1);
+
+    position: absolute;
+    top: 310px;
+    left: -100px;
+  }
+  .language-menu a {
+    padding: 5px;
+  }
+}
+
+/* iPhone 16 Pro Max and similar large phones: Landscape view */
+@media (min-width: 768px) and (max-width: 932px) {
+  nav {
+    height: 60px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  nav .nav-container {
+    justify-content: space-between;
+  }
+
+  nav .nav-container .logo {
+    flex: 0 0 auto;
+    justify-content: start;
+  }
+
+  nav .nav-container .logo a img {
+    height: 90%;
+  }
+
+  nav .nav-container .logo .country {
+    font-size: 10px;
+    transform: translateY(-10px) translateX(-10px);
+  }
+
+  /* Show mobile menu button */
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    position: relative;
+  }
+
+  /* Hide desktop menu, languages and login on mobile */
+  nav .nav-container .topMenu,
+  nav .nav-container .languages,
+  nav .nav-container .login {
+    display: none;
+  }
+
+  nav .nav-container .mobile-menu {
+    padding: 5px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #000;
+    background-color: #ddd;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* padding: 6px 7px 1px 7px; */
+    position: absolute;
+    top: 40px;
+    left: -280px;
+    background-color: #fff;
+    border: #ccc 1px solid;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 1);
+  }
+
+  nav .nav-container .mobile-menu .mobile-menu-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+  }
+
+  nav .nav-container .mobile-menu .mobile-menu-items a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    outline: none;
+    height: 100%;
+  }
+
+  nav .nav-container .mobile-menu .mobile-menu-items .menu-mobile-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  nav .nav-container .mobile-menu .mobile-menu-items .menu-mobile-item i {
+    width: 20px;
+  }
+
+  nav .nav-container .mobile-menu a:hover {
+    color: #fe711d;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+
+  .language-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 10px;
+    background-color: #fff;
+    border: #ccc 1px solid;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 1);
+
+    position: absolute;
+    top: 160px;
+    left: -95px;
+  }
+  .language-menu a {
+    padding: 5px;
+  }
+}

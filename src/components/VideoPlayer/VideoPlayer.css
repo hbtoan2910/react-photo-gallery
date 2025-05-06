@@ -1,0 +1,78 @@
+/* Vertical alignment for seek buttons */
+.video-js .vjs-seek-button {
+  display: flex !important;
+  height: 100% !important;
+  padding: 0 5px !important;
+  color: lightgreen;
+}
+
+/* Button container adjustments */
+.video-js .vjs-control-bar .vjs-seek-button {
+  margin: 0 2px;
+  width: 3em !important;
+}
+
+.video-js .vjs-seek-button.skip-forward::before {
+  content: "" !important;
+  font-family: Arial !important;
+  font-weight: bold !important;
+}
+
+.video-js .vjs-seek-button.skip-back::before {
+  content: "" !important;
+  font-family: Arial !important;
+  font-weight: bold !important;
+}
+
+/* Button label styling */
+.video-js .seek-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-js .seek-label {
+  display: block;
+  font-size: 0.7em;
+  margin-top: 2px;
+  font-family: Arial, sans-serif;
+}
+
+/* Hover effects */
+.video-js .vjs-seek-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Center the big play button */
+.video-js .vjs-big-play-button {
+  /* Position */
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  /* Size */
+  width: 2.5em !important;
+  height: 1.5em !important;
+  line-height: 1.5em !important;
+  border-radius: 10% !important;
+
+  /* Appearance */
+  border: none !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+/* Hover state */
+.video-js:hover .vjs-big-play-button {
+  background-color: rgba(255, 67, 67, 0.5) !important;
+  transform: translate(-50%, -50%) scale(1.2) !important;
+}
+
+.extra-info {
+  display: inline-block;
+  padding: 10px;
+  border: 2px solid rgba(80, 74, 64, 0.795);
+  background: rgba(0, 0, 0, 0.1); /* Optional background */
+  border-radius: 4px; /* Optional rounded corners */
+  margin: 10px 0;
+}
