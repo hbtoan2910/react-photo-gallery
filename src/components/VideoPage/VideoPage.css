@@ -1,1 +1,35 @@
+.video-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
 
+/* ============================================= */
+/* Mobile Styles - Applied via Media Query       */
+/* ============================================= */
+
+/* iPhone 16 Pro Max and similar large phones: Portrait view */
+@media (max-width: 767px) and (min-width: 430px) {
+  .video-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.2rem;
+    margin: 0.5rem auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+}
+/* iPhone 16 Pro Max and similar large phones: Landscape view */
+@media (min-width: 768px) and (max-width: 932px) {
+  .video-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.2rem;
+    margin: 0.5rem auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+}

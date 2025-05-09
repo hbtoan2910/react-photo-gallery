@@ -5,7 +5,7 @@ import "video.js/dist/video-js.css";
 import "videojs-seek-buttons"; // Import the seek buttons plugin
 import "videojs-seek-buttons/dist/videojs-seek-buttons.css"; // Import the plugin CSS
 
-const VideoPlayer = () => {
+const VideoPlayer = ({ title, src }: { title: string; src: string }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const playerRef = useRef<videojs.Player | null>(null);
 
@@ -28,18 +28,19 @@ const VideoPlayer = () => {
   const videoJsOptions = {
     autoplay: false,
     muted: true,
-    height: 400,
-    width: 600,
+    // height: 200,
+    // width: 400,
     controls: true,
     sources: [
       {
-        src: "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
+        title: title,
+        src: src,
         type: "video/mp4",
       },
     ],
   };
 
-  // Player controls
+  // Extra controls below player
   const play = () => {
     if (playerRef.current) {
       playerRef.current.play();
@@ -97,11 +98,39 @@ const VideoPlayer = () => {
         player.seekButtons({
           forward: 10,
           back: 10,
-          forwardContent: '<span class="seek-label">+10s</span>',
-          backContent: '<span class="seek-label">-10s</span>',
-          forwardTip: "Skip forward 10 seconds",
-          backTip: "Skip backward 10 seconds",
+          // // forwardContent: '<span class="seek-label">+10s</span>',
+          // // backContent: '<span class="seek-label">-10s</span>',
+          // // forwardTip: "Skip forward 10 seconds",
+          // // backTip: "Skip backward 10 seconds",
         });
+
+        // Add download button to control bar
+        const downloadButton = player.controlBar.addChild(
+          "button"
+        ) as videojs.Button;
+
+        // Set button properties
+        downloadButton.controlText("Download Video");
+        downloadButton.addClass("vjs-download-button");
+
+        // Create icon element
+        const icon = videojs.dom.createEl("span", {
+          className: "vjs-icon-download",
+        });
+
+        downloadButton.on("click", () => {
+          const videoSrc = player.currentSrc();
+          if (videoSrc) {
+            const link = document.createElement("a");
+            link.href = videoSrc;
+            link.download = title || "video";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }
+        });
+        // Append icon to button using Video.js DOM methods
+        downloadButton.el().appendChild(icon);
 
         player.on("play", () => {
           setVideoState((prev) => ({ ...prev, isPlaying: true }));
@@ -149,26 +178,26 @@ const VideoPlayer = () => {
       <video ref={videoRef} className="video-js" />
 
       <div className="extra-info">
+        <div>Title: {title}</div>
         <div>Played Time: {secondsToHms(playedSeconds)}</div>
         <div>Total Time: {secondsToHms(totalDuration)}</div>
         <div>Remaining Time: {secondsToHms(remainingVideoPlay)}</div>
       </div>
-      <br />
       <div className="d-flex">
         <button className="btn btn-danger btn-sm" onClick={togglePlay}>
           {isPlaying ? "Pause" : "Play"}
         </button>
         &nbsp;
         <button className="btn btn-danger btn-sm" onClick={jumpTo}>
-          Play from 55th second
+          Play from 55th sec
         </button>
         &nbsp;
         <button className="btn btn-danger btn-sm" onClick={forwardVideo}>
-          10 secs +
+          10s +
         </button>
         &nbsp;
         <button className="btn btn-danger btn-sm" onClick={backwardVideo}>
-          10 secs -
+          10s -
         </button>
       </div>
     </div>

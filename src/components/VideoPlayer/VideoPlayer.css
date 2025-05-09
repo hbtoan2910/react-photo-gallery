@@ -1,3 +1,25 @@
+.customVideoPlayer {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+  border: 2px salmon solid;
+  border-radius: 5px;
+  margin: 1rem auto;
+  width: 80%;
+}
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgb(255, 183, 90);
+}
+.video-js {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9; /* 16:9 aspect ratio: Width (W) : Height (H) = 16 : 9 */
+}
+
 /* Vertical alignment for seek buttons */
 .video-js .vjs-seek-button {
   display: flex !important;
@@ -68,11 +90,74 @@
   transform: translate(-50%, -50%) scale(1.2) !important;
 }
 
+.video-js .vjs-download-button .vjs-icon-download::before {
+  content: '\f019';
+  font-family: 'FontAwesome';
+  font-size: 1rem;
+  color: lightgreen;
+}
+
 .extra-info {
   display: inline-block;
-  padding: 10px;
-  border: 2px solid rgba(80, 74, 64, 0.795);
+  padding: 5px;
+  border: 1px solid rgba(80, 74, 64, 0.795);
   background: rgba(0, 0, 0, 0.1); /* Optional background */
   border-radius: 4px; /* Optional rounded corners */
   margin: 10px 0;
+  font-size: small;
+}
+
+/* ============================================= */
+/* Mobile Styles - Applied via Media Query       */
+/* ============================================= */
+
+/* iPhone 16 Pro Max and similar large phones: Portrait view */
+@media (max-width: 767px) and (min-width: 430px) {
+  .customVideoPlayer {
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    border: 1px salmon solid;
+    border-radius: 5px;
+    margin: 0.5rem auto;
+    padding: 0.2rem 0.3rem;
+    width: 90%;
+  }
+  .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(255, 183, 90);
+  }
+  .video-js {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9; /* 16:9 aspect ratio: Width (W) : Height (H) = 16 : 9 */
+  }
+
+}
+
+/* iPhone 16 Pro Max and similar large phones: Landscape view */
+@media (min-width: 768px) and (max-width: 932px) {
+  .customVideoPlayer {
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    border: 1px salmon solid;
+    border-radius: 5px;
+    margin: 0.5rem auto;
+    padding: 0.2rem 0.3rem;
+  }
+  .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center
+    padding: 5px;
+    background-color: rgb(255, 183, 90);
+  }
+  .video-js {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9; /* 16:9 aspect ratio: Width (W) : Height (H) = 16 : 9 */
+  }
 }
