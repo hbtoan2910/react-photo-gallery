@@ -1,5 +1,16 @@
 # Photo Gallery: React + Typescript + Vite
 
+## Vite vs CRA (create react app)
+
+![alt text](image-9.png)
+
+## How to install:
+
+npm create vite@latest my-react-app -- --template react
+cd my-react-app
+npm install
+npm run dev
+
 ## Description:
 
 Looking for a professional photo gallery with these features?
@@ -40,7 +51,7 @@ Looking for a professional photo gallery with these features?
 
 1. Basic pagination features (including reduce number of page btn displayed (add ellipsis) when swapping to mobile view)
 
-![alt text](image.png)
+   ![alt text](image.png)
 
 2. Make this webpage responsive for Iphone 16 Promax (both Portrait and Landscape)
 
@@ -60,7 +71,11 @@ Looking for a professional photo gallery with these features?
 
    ![alt text](image-8.png)
 
-3. Use library **_yet-another-react-lightbox_** : create a **lightbox** to increase UX: supports keyboard, mouse, touchpad and touchscreen navigation
+3. Use Videojs with customized features: forward10s+, back10s-, download video
+
+   ![alt video](videojs.mp4)
+
+4. Use library **_yet-another-react-lightbox_** : create a **lightbox** to increase UX: supports keyboard, mouse, touchpad and touchscreen navigation
 
 - Preloading: never displays partially downloaded images
 - Performance: preloads limited number of images without compromising performance or UX
