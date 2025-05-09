@@ -73,7 +73,7 @@ Looking for a professional photo gallery with these features?
 
 3. Use Videojs with customized features: forward10s+, back10s-, download video
 
-   ![alt video](videojs.mp4)
+![videojs](videojs.gif)
 
 4. Use library **_yet-another-react-lightbox_** : create a **lightbox** to increase UX: supports keyboard, mouse, touchpad and touchscreen navigation
 
