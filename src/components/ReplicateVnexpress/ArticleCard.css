@@ -22,3 +22,13 @@
 .article-card:hover h3 {
   color: var(--vne-red);
 }
+
+.article-card .article-content .excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  text-overflow: ellipsis;
+  height: 5rem;
+  overflow: hidden;
+}

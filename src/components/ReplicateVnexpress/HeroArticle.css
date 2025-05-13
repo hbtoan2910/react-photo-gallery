@@ -9,3 +9,13 @@
   align-items: flex-start;
   text-align: left;
 }
+
+.hero-article .hero-text > p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  text-overflow: ellipsis;
+  height: 5rem;
+  overflow: hidden;
+}

@@ -1,3 +1,4 @@
+import Chatbot from "../Chatbot/Chatbot";
 import ArticleCard from "../ReplicateVnexpress/ArticleCard";
 import BreakingNewsTicker from "../ReplicateVnexpress/BreakingNewsTicker";
 import HeroArticle from "../ReplicateVnexpress/HeroArticle";
@@ -45,6 +46,7 @@ const HomePage = () => {
 
         {/* 2. Featured Hero Article */}
         <HeroArticle />
+        <Chatbot />
 
         {/* 3. Article Lists */}
         <div className="content-grid">

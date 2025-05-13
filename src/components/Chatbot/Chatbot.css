@@ -1,0 +1,203 @@
+/* Import font Inter from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
+.chatbot-popup {
+  position: fixed;
+  bottom: 4rem;
+  right: 2rem;
+  font-family: "Inter", sans-serif;
+  margin: 1rem 2rem;
+  width: 420px;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures rounded corners are respected */
+}
+
+/* Chat Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(132, 41, 252);
+  padding: 0 0.7rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.chat-header button {
+  border: 0;
+  color: whitesmoke;
+  background-color: rgb(132, 41, 252);
+}
+.chat-header .header-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
+}
+.chat-header .header-info .logo-text {
+  color: whitesmoke;
+}
+.material-symbols-rounded {
+  width: 40px;
+  height: 40px;
+  padding: 0.4rem;
+  border-radius: 50%;
+}
+.material-symbols-rounded:hover {
+  cursor: pointer;
+}
+
+/* Chat Body */
+.chat-body {
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 460px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(217, 178, 253) transparent;
+}
+
+/* Message Base Styles */
+.message {
+  display: flex;
+  max-width: 80%;
+}
+
+.message-text {
+  padding: 0.75rem 1rem;
+  line-height: 1.4;
+  border-radius: 1rem;
+  word-wrap: break-word;
+}
+
+/* Bot Message */
+.message.model-message {
+  align-self: flex-start;
+  gap: 0.75rem;
+}
+
+.message.model-message .message-text {
+  background-color: #f1f3f5;
+  border-radius: 1rem 1rem 1rem 0.25rem;
+  color: #212529;
+  margin: 0;
+}
+
+.message.model-message {
+  display: flex;
+  align-items: flex-end;
+}
+/* Bot Icon */
+.message.model-message .chatbot-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(132, 41, 252);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.message.model-message .chatbot-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+/* User Message */
+.message.user-message {
+  align-self: flex-end;
+}
+
+.message.user-message .message-text {
+  background-color: rgb(132, 41, 252);
+  color: white;
+  border-radius: 1rem 1rem 0.25rem 1rem;
+  margin: 0;
+}
+
+/* Chatbot Footer*/
+.chat-footer {
+  padding: 1rem 1.2rem;
+}
+.chat-footer form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 32px;
+  padding: 0 0.5rem;
+  outline: 1px solid #cccce5;
+  overflow: hidden;
+}
+.chat-footer form:focus-within {
+  outline: 2px solid #cccce5;
+}
+.chat-footer form .message-input {
+  height: 46px;
+  padding: 0.4rem;
+  font-size: large;
+  border: none;
+  outline: none;
+  flex: 1;
+}
+.chat-footer form .message-input:valid ~ button {
+  display: block;
+}
+.chat-footer form button {
+  display: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgb(132, 41, 252);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.chat-footer form button:hover {
+  background-color: rgb(159, 91, 247);
+}
+
+/* Chatbot Toggle Button */
+#chatbot-toggle {
+  display: flex;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgb(132, 41, 252);
+  border: none;
+  border-radius: 50%;
+  padding: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 30px;
+  animation: vibrate 0.3s ease-in-out 1s infinite;
+}
+#chatbot-toggle:hover {
+  background-color: rgb(159, 91, 247);
+}
+@keyframes vibrate {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
