@@ -100,7 +100,7 @@ Looking for a professional photo gallery with these features?
 
 5. Build Your Own Chatbot AI with Gemini & React (also prioritized using predefined data) 🚀🤖
 
-![alt text](chatbot_with_gemini.gif)
+   ![alt text](<chatbot_ gemini.gif>)
 
 ## Pending issues:
 
