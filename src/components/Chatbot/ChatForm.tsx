@@ -46,6 +46,8 @@ const ChatForm: React.FC<ChatFormProps> = ({
           role: "user",
           text: `Using the details provided above, please address this query: ${userInputText}`, //use prefinedDate combine with AI
         },
+        // Removing the restrictive prefix ("Using the details provided above...") will make Gemini behave like
+        // its default mode—answering based on its full training data (not just your predefined context)
       ]);
       // Remove the "Thinking..." message and add the actual response from bot
       setChatHistory((prevHistory) => [

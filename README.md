@@ -98,6 +98,10 @@ Looking for a professional photo gallery with these features?
 
 ![alt text](image-2.png)
 
+5. Build Your Own Chatbot AI with Gemini & React (also prioritized using predefined data) 🚀🤖
+
+![video](chatbot with gemini.gif)
+
 ## Pending issues:
 
 - The preloading feature performs best on Firefox, but doesn't work as effectively on other browsers like Chrome or Opera, even after implementing caching to enhance rendering speed.
